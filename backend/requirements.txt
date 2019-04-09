@@ -1,0 +1,6 @@
+flask
+gunicorn
+pandas
+requests
+xmltodict
+google-cloud-datastore
