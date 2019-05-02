@@ -1,0 +1,4 @@
+1. Run `docker-compose up` to build
+2. Frontend will launch on localhost:3000
+3. Backend will run on localhost:8080
+4. Run in a browser with CORS disabled for frontend to be able to reach backend.

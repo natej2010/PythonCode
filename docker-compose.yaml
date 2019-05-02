@@ -1,0 +1,24 @@
+version: '3'
+services:
+  frontend:
+    build: ./desktop
+    ports:
+     - "3000:3000"
+    expose:
+      - "3000"
+    links:
+      - backend
+    command: ["npm", "start"]
+    volumes:
+      - ./desktop/public:/app/public
+      - ./desktop/src:/app/src
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    command: ["gunicorn", "--bind", ":8080", "main:app"]
+    volumes:
+      - ./backend:/app
